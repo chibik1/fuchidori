@@ -6,11 +6,27 @@
 |---|---|
 | `index.html` | Web アプリ本体 (1 ファイル) |
 | `manifest.webmanifest`, `icons/` | PWA の情報とアイコン |
+| `sw.js` | オフライン対応の Service Worker |
 | `.well-known/assetlinks.json` | Android アプリとサイトを結びつける証明 (Digital Asset Links) |
 | `android/` | Android アプリ (Trusted Web Activity) の Gradle プロジェクト |
 | `.github/workflows/release.yml` | タグを push すると署名済み APK を Releases に公開する |
 
 Vercel は `main` への push で自動デプロイする。`.vercelignore` で `android/` などは公開対象から外している。
+
+## オフライン対応
+
+`sw.js` が次のように保存する。Android アプリはサイトをそのまま開いているので、APK の作り直しは要らない。
+
+| 対象 | やり方 |
+|---|---|
+| `index.html` | ネットを優先して、取れたら保存。圏外・3 秒以内に返らない・サーバーエラーのときは保存した版を出す |
+| アイコンなどのサイト内ファイル | 保存した版をすぐ出して、裏で更新する |
+| face-api | インストール時に保存する (学習データは `index.html` に入っている) |
+| Google Fonts | 使った分だけ保存する (全部で 851 個に分かれているので、まとめては保存しない) |
+
+- `index.html` を更新するだけなら `VERSION` を上げなくてよい
+- `sw.js` の保存ルール・`LOCAL_ASSETS`・face-api の版を変えたら `VERSION` を上げる
+- 1 回目の表示は Service Worker が動く前なのでフォントは保存されない。2 回目から保存される
 
 ## Android アプリ (TWA)
 

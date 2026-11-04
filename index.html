@@ -2982,6 +2982,11 @@ goto(1);
 initPresetSync();
 })();
 </script>
+<script>
+if ("serviceWorker" in navigator) {
+  addEventListener("load", () => { navigator.serviceWorker.register("/sw.js").catch(() => {}); });
+}
+</script>
 </body>
 </html>
 
