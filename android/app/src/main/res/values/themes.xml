@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ChekiTotonoe" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/bar_light</item>
+        <item name="android:navigationBarColor">@color/bar_light</item>
+    </style>
+</resources>
