@@ -1,0 +1,9 @@
+[versions]
+agp = "9.4.1"
+androidbrowserhelper = "2.7.4"
+
+[libraries]
+androidbrowserhelper = { group = "com.google.androidbrowserhelper", name = "androidbrowserhelper", version.ref = "androidbrowserhelper" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
