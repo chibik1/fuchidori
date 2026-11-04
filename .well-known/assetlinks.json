@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "cheki.totonoe",
+      "sha256_cert_fingerprints": [
+        "7E:84:A4:FA:5F:49:69:3D:2E:29:E7:7B:6A:62:A0:B6:F7:75:D2:0C:81:EF:FB:EF:24:41:10:79:8A:9B:6E:50"
+      ]
+    }
+  }
+]
