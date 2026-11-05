@@ -7,7 +7,7 @@
         android:label="@string/app_name"
         android:manageSpaceActivity="com.google.androidbrowserhelper.trusted.ManageDataLauncherActivity"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ChekiTotonoe">
+        android:theme="@style/Theme.Fuchidori">
 
         <meta-data
             android:name="asset_statements"

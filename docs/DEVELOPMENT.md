@@ -30,8 +30,8 @@ Vercel は `main` への push で自動デプロイする。`.vercelignore` で 
 
 ## Android アプリ (TWA)
 
-- [androidbrowserhelper](https://github.com/GoogleChrome/android-browser-helper) の `LauncherActivity` で `https://cheki-totonoe.vercel.app/` を開くだけのアプリ。アプリ側にコードはなく、設定は `android/app/src/main/AndroidManifest.xml` と `res/values/` にある
-- applicationId: `cheki.totonoe` (公開後は変更不可)
+- [androidbrowserhelper](https://github.com/GoogleChrome/android-browser-helper) の `LauncherActivity` で `https://fuchidori.vercel.app/` を開くだけのアプリ。アプリ側にコードはなく、設定は `android/app/src/main/AndroidManifest.xml` と `res/values/` にある
+- applicationId: `fuchidori.app` (公開後は変更不可)
 - minSdk 24 (androidbrowserhelper の下限)
 - TWA に対応したブラウザ (Chrome など) がない端末では WebView で開く (`FALLBACK_STRATEGY = webview`)
 - アドレスバーが消えるのは、サイトの `/.well-known/assetlinks.json` にある SHA-256 指紋と APK の署名鍵が一致したときだけ。署名鍵を変えたら assetlinks.json も更新する
@@ -49,7 +49,7 @@ cd android
 
 ## 署名
 
-チェキ整え専用の keystore を使う (他のアプリと共有しない)。keystore とパスワードは Git に入れない (`android/.gitignore` で除外済み)。
+このアプリ専用の keystore を使う (他のアプリと共有しない)。keystore とパスワードは Git に入れない (`android/.gitignore` で除外済み)。
 
 署名情報は次のどちらかから読む。
 
@@ -80,9 +80,16 @@ GitHub の Secrets に次を登録しておく。
 | `CHEKI_KEY_ALIAS` | 鍵の別名 (`cheki-totonoe`) |
 | `CHEKI_KEY_PASSWORD` | 鍵のパスワード (keystore と同じにした場合は同じ値) |
 
-`v0.1.0` のようなタグを push すると、`ChekiTotonoe-0.1.0.apk` が Releases に公開される。versionCode は Actions の実行番号。
+`v0.2.0` のようなタグを push すると、`Fuchidori-0.2.0.apk` が Releases に公開される。versionCode は Actions の実行番号。
 
 ```bash
 git tag v0.1.0
 git push origin v0.1.0
 ```
+
+## 名前について
+
+アプリは最初「チェキ整え」という名前だった。内部の次の名前は、見えないうえに変えると作業が増えるので残している。
+
+- Secrets と環境変数の `CHEKI_*`、keystore のファイル名と別名 `cheki-totonoe`
+- `localStorage` のキー `cheki.*`、`sw.js` のキャッシュ名 `cheki-*`
