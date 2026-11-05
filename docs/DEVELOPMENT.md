@@ -13,6 +13,10 @@
 
 Vercel は `main` への push で自動デプロイする。`.vercelignore` で `android/` などは公開対象から外している。
 
+## アクセス解析
+
+Vercel Web Analytics を使っている。`index.html` の `/_vercel/insights/script.js` が計測用のコードで、Vercel の Analytics 画面で有効にしていないと読み込めない。Android アプリから開いた分も数えられるが、オフラインで使った分は数えられない。
+
 ## オフライン対応
 
 `sw.js` が次のように保存する。Android アプリはサイトをそのまま開いているので、APK の作り直しは要らない。
