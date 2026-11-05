@@ -1,4 +1,4 @@
-# チェキ整え
+# ふちどり
 
 チェキを撮った写真を、きれいなデータに仕上げるアプリ。
 ふちをまっすぐ合わせて色を整え、顔を隠したり、名前や枚数を入れたりできる。
@@ -9,11 +9,11 @@
 
 ### ブラウザで使う
 
-<https://cheki-totonoe.vercel.app/> を開く。スマホでもパソコンでも使える。
+<https://fuchidori.vercel.app/> を開く。スマホでもパソコンでも使える。
 
 ### Android アプリで使う
 
-[Releases](https://github.com/chibik1/cheki-totonoe/releases/latest) から最新の `ChekiTotonoe-[version].apk` をダウンロードしてインストールする。
+[Releases](https://github.com/chibik1/fuchidori/releases/latest) から最新の `Fuchidori-[version].apk` をダウンロードしてインストールする。
 
 - Android 7.0 以降
 - 初めてのときは「提供元不明のアプリ」のインストールを許可する

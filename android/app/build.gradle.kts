@@ -17,17 +17,17 @@ val releaseStoreFile = signingValue("CHEKI_KEYSTORE_FILE", "storeFile")
 val hasReleaseSigning = releaseStoreFile != null && rootProject.file(releaseStoreFile).exists()
 
 android {
-    namespace = "cheki.totonoe"
+    namespace = "fuchidori.app"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "cheki.totonoe"
+        applicationId = "fuchidori.app"
         minSdk = 24
         targetSdk = 37
         versionCode = System.getenv("CHEKI_VERSION_CODE")?.toIntOrNull() ?: 1
-        versionName = System.getenv("CHEKI_VERSION_NAME") ?: "0.1.0"
+        versionName = System.getenv("CHEKI_VERSION_NAME") ?: "0.2.0"
     }
 
     signingConfigs {

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>チェキ整え</title>
+<title>ふちどり</title>
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#FBFBFB" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#05051B" media="(prefers-color-scheme: dark)">
@@ -2395,7 +2395,7 @@ async function loadFile(list) {
   if (!job) { toast(decodeErrorText(), 4500); return; }
   freeJob(st.job);
   st.job = job;
-  st.item = { name: f.name || "photo", outName: "chekiedit.jpg", saved: false };
+  st.item = { name: f.name || "photo", outName: "fuchidori.jpg", saved: false };
   st.p = startParams(); st.selPreset = st.defaultId; st.rot = 0;
   st.faces = []; st.faceChecked = false; st.faceSel = -1;
   st.warped = st.preview = st.stats = null;
@@ -2405,7 +2405,7 @@ async function loadFile(list) {
   else if (!found) toast("フチを自動で見つけられませんでした。四隅の点をドラッグして合わせてください。", 4000);
 }
 function outFileName() {
-  const t = st.text, parts = ["chekiedit"];
+  const t = st.text, parts = ["fuchidori"];
   const nm = t.name.on ? (t.name.name || "").trim().replace(/[\\/:*?"<>|\s]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 24) : "";
   if (nm) parts.push(nm);
   const d = new Date(), z = n => String(n).padStart(2, "0");

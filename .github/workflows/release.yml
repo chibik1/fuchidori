@@ -52,7 +52,7 @@ jobs:
 
       - name: Rename APK
         run: |
-          NAME="ChekiTotonoe-${CHEKI_VERSION_NAME:-${GITHUB_SHA::7}}.apk"
+          NAME="Fuchidori-${CHEKI_VERSION_NAME:-${GITHUB_SHA::7}}.apk"
           cp app/build/outputs/apk/release/app-release.apk "$NAME"
           echo "APK_NAME=$NAME" >> "$GITHUB_ENV"
 
